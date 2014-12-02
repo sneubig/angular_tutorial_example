@@ -5,20 +5,17 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 
-<!-- ng-controller is the directive
-	StoreController is the Controller name
-	store is the Alias -->
 <body ng-controller="StoreController as store">
 	
-<!-- 	Use ng-repeat to iterate through array, identify each product within the store.products array -->
-	<div ng-repeat="product in store.products">
-		<h1> {{product.name}} </h1>
-		<h2> ${{product.price}} </h2>
-		<p> {{product.description}} </p>
-		<!-- The ng-show says will only show the element if the value of the Expression is True -->
-		<button ng-show="product.canPurchase"> Add to Cart </button>
-	</div>
-	
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="product in store.products">
+			<h3> 
+				{{product.name}} 
+				<em class="pull-right">${{product.price}} </em>
+			</h3>
+		</li>
+	</ul>
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 
