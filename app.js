@@ -9,11 +9,19 @@
 
 	var gems = [
 		{
-			name: 'Dodecahedron', 
+			name: 'Dodecahedron Gem', 
 			price: 2.95,
 			description: '...',
-			// Attaches Add to Cart Button when true
-			canPurchase: true, 
+			images: [
+				{
+					full: 'dodecahedron-01-full.jpg',
+					thumb: 'dodecahedron-01-thumb.jpg'
+				},
+				{
+					full: 'dodecahedron-02-full.jpg',
+					thumb: 'dodecahedron-02-thumb.jpg'
+				}
+			]
 		}, 
 		{
 			name: 'Pentagonal Gem', 
