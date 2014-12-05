@@ -20,12 +20,19 @@
 <!-- 	Initial tab is set on refresh -->
 	<section ng-init="tab = 1">
 		<ul class="nav nav-pills">
-			<li><a href ng-click = "tab = 1">Description</a></li>
-			<li><a href ng-click = "tab = 2">Specifications</a></li>
-			<li><a href ng-click = "tab = 3">Reviews</a></li>
+		<!-- 	Setting the 'active' class, and if the expression is true, set class to 'active', otherwise do nothing -->
+			<li ng-class="{active:tab === 1}">
+				<a href ng-click = "tab = 1">Description</a>
+			</li>
+			<li ng-class="{active:tab === 2}">
+				<a href ng-click = "tab = 2">Specifications</a>
+			</li>
+			<li ng-class="{active:tab === 3}">
+				<a href ng-click = "tab = 3">Reviews</a>
+			</li>
 		</ul>
 		<!-- When ng-click changes the value of tab, the {{tab}} expression automatically gets updated -->
-		{{tab}}
+		<!-- {{tab}} -->
 
 		<!-- Show the panel if tab is the right number -->
 		<div class="panel" ng-show="tab === 1">
