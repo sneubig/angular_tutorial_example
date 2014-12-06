@@ -17,33 +17,32 @@
 		</li>
 	</ul>
 
-<!-- 	Initial tab is set on refresh -->
-	<section ng-init="tab = 1">
+	<section ng-controller="PanelController as panel">
 		<ul class="nav nav-pills">
 		<!-- 	Setting the 'active' class, and if the expression is true, set class to 'active', otherwise do nothing -->
-			<li ng-class="{active:tab === 1}">
-				<a href ng-click = "tab = 1">Description</a>
+			<li ng-class="{active:panel.isSelected(1)}">
+				<a href ng-click = "panel.selectTab(1)">Description</a>
 			</li>
-			<li ng-class="{active:tab === 2}">
-				<a href ng-click = "tab = 2">Specifications</a>
+			<li ng-class="{active:panel.isSelected(2)}">
+				<a href ng-click = "panel.selectTab(2)">Specifications</a>
 			</li>
-			<li ng-class="{active:tab === 3}">
-				<a href ng-click = "tab = 3">Reviews</a>
+			<li ng-class="{active:panel.isSelected(3)}">
+				<a href ng-click = "panel.selectTab(3)">Reviews</a>
 			</li>
 		</ul>
 		<!-- When ng-click changes the value of tab, the {{tab}} expression automatically gets updated -->
 		<!-- {{tab}} -->
 
 		<!-- Show the panel if tab is the right number -->
-		<div class="panel" ng-show="tab === 1">
+		<div class="panel" ng-show="panel.isSelected(1)">
 			<h4>Description</h4>
 			<p>{{product.description}}</p>
 		</div>
-		<div class="panel" ng-show="tab === 2">
+		<div class="panel" ng-show="panel.isSelected(2)">
 			<h4>Specifications</h4>
 			<blockquote>None yet</blockquote>
 		</div>
-		<div class="panel" ng-show="tab === 3">
+		<div class="panel" ng-show="panel.isSelected(3)">
 			<h4>Reviews</h4>
 			<blockquote>None yet</blockquote>
 		</div>

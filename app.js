@@ -31,4 +31,19 @@
 		}
 	];
 
+	app.controller("PanelController", function(){
+		// Replaces the ng-init in the index.html
+		this.tab = 1;
+
+		// 
+		this.selectTab = function(setTab){
+			this.tab = setTab;
+		};
+
+		// If current tab is equal to the selected Tab, then returning which tab is equal to the selected tab
+		this.isSelected = function(checkTab){
+			return this.tab === checkTab;
+		};
+	});
+
 })();
